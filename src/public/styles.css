@@ -1,0 +1,418 @@
+/* Reset / baza */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f7f7f8;
+  color: #222;
+}
+
+a {
+  color: #3843d0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Nagłówek */
+header {
+  background: #3843d0;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+/* Główna zawartość */
+body > h1 {
+  margin: 1.5rem 2rem 0.5rem;
+}
+
+main {
+  padding: 0 2rem 2rem;
+}
+
+/* Sekcje/kafelki */
+.section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+}
+
+/* Formularze */
+form {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+/* Guziki ogólne */
+button {
+  background: #3843d0;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: #2d36a5;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Lista postów na stronie głównej */
+#posts {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+#posts li {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+}
+
+#posts li strong {
+  font-size: 1rem;
+}
+
+#posts li button {
+  margin-left: 1rem;
+}
+
+/* Widok pojedynczego posta */
+#postTitle {
+  margin: 1.5rem 2rem 0.25rem;
+}
+
+#postBody {
+  margin: 0 2rem 1rem;
+  background: #fff;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+}
+
+/* Wrapper na komentarze i formularz na post.html */
+.comments-section,
+.comment-form-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 2rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+}
+
+/* Lista komentarzy */
+#comments {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+#comments li {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+}
+
+#comments li:last-child {
+  border-bottom: none;
+}
+
+#comments li strong {
+  margin-right: 0.25rem;
+}
+
+/* Link powrotu */
+.back-link {
+  display: inline-block;
+  margin: 1rem 2rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.approve-btn {
+  background: #43a047;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+  margin-top: 6px;
+}
+
+.approve-btn:hover {
+  background: #2e7d32;
+}
+
+.approve-btn:active {
+  transform: scale(0.97);
+}
+
+#pendingComments li {
+  padding: 0.8rem 0.6rem;
+  border-bottom: 1px solid #ececec;
+}
+
+/* Dwukolumnowy układ strony głównej */
+#layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* dwie równe kolumny */
+  gap: 2rem;                         /* odstęp między panelami */
+  padding: 0 2rem 2rem;
+}
+
+/* Panele */
+.panel-left, .panel-right {
+  min-height: 350px;
+}
+
+/* Responsywność: na małych ekranach kolumny układają się pionowo */
+@media (max-width: 800px) {
+  #layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Układ pionowy: 2 bloczki jeden pod drugim */
+#layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2rem 2rem;
+}
+
+/* Górny panel — tworzenie posta */
+.panel-top {
+  min-height: 250px;
+  padding-left: 1.25rem;  /* wyrównuje do reszty bloczka */
+  padding-right: 1.25rem;
+}
+
+/* Dolny panel — lista postów */
+.panel-bottom {
+  min-height: 350px;
+}
+
+/* Styl formularza tworzenia posta */
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post-form input,
+.post-form textarea {
+  margin: 0;
+}
+
+.post-form label {
+  font-weight: 600;
+  margin-bottom: -0.3rem;
+  color: #333;
+}
+
+/* Pole tytułu */
+#postTitle {
+  padding: 0.7rem 0.8rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Pole treści */
+#postBody {
+  padding: 0.8rem 0.9rem;
+  min-height: 160px;
+  font-size: 1rem;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efekty focus */
+#postTitle:focus,
+#postBody:focus {
+  border-color: #3843d0;
+  box-shadow: 0 0 0 2px rgba(56, 67, 208, 0.2);
+}
+
+/* Karta posta */
+.post-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.4rem;
+  margin: 1.5rem 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* Tytuł posta */
+.post-card h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+/* Treść posta */
+.post-card .body {
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  white-space: pre-line;
+  color: #444;
+}
+
+/* Sekcja komentarzy */
+.comments-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.comments-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Lista komentarzy */
+#comments {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Pojedynczy komentarz */
+.comment {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Ostatni bez linii */
+.comment:last-child {
+  border-bottom: none;
+}
+
+/* Autor komentarza */
+.comment-author {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+/* Treść komentarza */
+.comment-body {
+  font-size: 0.98rem;
+  color: #444;
+  line-height: 1.5rem;
+  white-space: pre-line;
+}
+
+/* Sekcja formularza komentarza */
+.comment-form-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Nagłówek formularza */
+.comment-form-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Układ formularza */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;     /* ⭐ wygląda estetycznie i nie jest zbyt szeroki */
+  width: 100%;
+}
+
+/* Etykiety */
+.comment-form label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Pola formularza */
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #fafafa;
+}
+
+/* Efekt focus */
+.comment-form input:focus,
+.comment-form textarea:focus {
+  border-color: #3843d0;
+  box-shadow: 0 0 0 2px rgba(56, 67, 208, 0.2);
+  background: #fff;
+}
+
+/* Pole treści */
+.comment-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* Przycisk */
+.comment-form button {
+  align-self: flex-start;   /* ⭐ przycisk nie jest na całą szerokość */
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
